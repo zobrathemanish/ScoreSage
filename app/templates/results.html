@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        .data {
+            margin: auto;
+            width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Prediction Results</h1>
+        <div class="table-responsive mt-4">
+            {% for table, title in zip(tables, titles) %}
+                <div class="mb-5">
+                    {{ table | safe }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <a href="/" class="btn btn-primary mt-3">Upload Another File</a>
+        </div>
+    </div>
+</body>
+</html>
